@@ -1,0 +1,49 @@
+
+Name: Ayelet Gibli
+Id: 208691675
+
+Exercise 3 - HTTP server.
+
+===Description ===
+
+Program files: 
+
+threadpool.h - Header file. Declaring the threadpool functions and structs.
+
+----------
+
+threadpool.c - file that implementaion a threadpool and its Actions.
+functions:
+	create_threadpool - creates a fixed-sized threadpool.
+	dispatch -  enter a "job" of type work_t into the queue.
+	do_work - the work function of the thread.
+	destroy_threadpool - kills the threadpool and free memory.
+
+----------
+
+server.c - file that implementaion a http server and its Actions.
+my functions:
+	initlizeStruct - init struct response.
+    freeStruct - free struct response.
+    sysCallError - handle some system call error.
+    userError - handle some usage error.
+    internalServerError500 - handle errors that happend while handaling the client.
+    get_mime_type - gets a file path and returns the file type.
+    checkPermission - gets a file path and returns "SUCCESS" if it has the right perrmision.
+    badRequest400 - fills in the struct the "400 - Bad request" headers values.
+    notFound404 - fills in the struct the "404 - Not found" headers values.
+    notSupported501 - fills in the struct the "501 - Not supported" headers values.
+    forbiddenResponse403 - fills in the struct the "403 - Forbidden" headers values.
+    found302 - fills in the struct the "302 - Found" headers values.
+    ok200 - fills in the struct the "200 - OK" headers values.
+    fileResponse - prepare sending a specific file to the client.
+    dirContent - prepare sending a specific dir content (In the defiened html form) to the client.
+    checkDirectory - get a request path to some directory, checks if the dir has the "index.html" file.
+    buildHeaders - build the final response headers string by the struct values.
+    checkRequest - check the client request.
+    handleClient - the main one that handle a client.
+    
+----------
+
+README - this file.
+
